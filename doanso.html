@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hãy thử đoán xem!</title>
+</head>
+<body>
+    <span><input type="button" name="play" value="play" onclick="showMessage()" id="play"></span>
+    <script>
+        function showMessage(){
+            var value = null;
+            var max = prompt("Bạn muốn đoán trong khoảng nào: ");
+            var correct = Math.floor(Math.random() * max) + 1;
+            var n = 0;
+            do {
+                value = prompt("Nhập vào số bất kỳ: ");
+                if(value == correct){
+                    alert("Congratulations!");
+                    break;
+                }
+                n = n+1;
+            } while(n<3);
+
+            if(n>=3){
+                alert("Game over");
+            }
+        }
+    </script>
+</body>
+</html>
